@@ -258,7 +258,7 @@ nav .container {
 }
 .cat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
 }
 .cat-card {
@@ -274,7 +274,7 @@ nav .container {
   border: 1px solid transparent;
 }
 .cat-card:hover {
-  border-color: rgba(232,93,4,0.15);
+  border-color: rgba(18,232,198,0.15);
   box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
 }
@@ -365,7 +365,7 @@ nav .container {
 .article-card-body { padding: 1.2rem 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
 .article-card-tag {
   display: inline-block;
-  background: rgba(232,93,4,0.1);
+  background: rgba(18,232,198,0.1);
   color: var(--accent);
   font-size: 0.7rem;
   font-weight: 600;
@@ -452,7 +452,7 @@ nav .container {
 /* ---- Table of Contents (Sommaire) ---- */
 .toc {
   background: linear-gradient(135deg, #f8f4f0, #fff);
-  border: 1px solid rgba(232,93,4,0.15);
+  border: 1px solid rgba(18,232,198,0.15);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
   padding: 1.2rem 1.5rem;
@@ -491,7 +491,7 @@ nav .container {
 
 /* ---- Inline highlight box ---- */
 .highlight-box {
-  background: rgba(232,93,4,0.06);
+  background: rgba(18,232,198,0.06);
   border-left: 3px solid var(--accent);
   padding: 0.8rem 1rem;
   margin: 1.2rem 0;
@@ -514,13 +514,13 @@ nav .container {
   position: relative;
 }
 .product-card:hover { 
-  border-color: rgba(232,93,4,0.2);
+  border-color: rgba(18,232,198,0.2);
   box-shadow: var(--shadow-hover);
 }
 .product-card.best-choice {
   border-color: var(--accent);
   border-width: 1.5px;
-  background: linear-gradient(135deg, #fff, rgba(232,93,4,0.03));
+  background: linear-gradient(135deg, #fff, rgba(18,232,198,0.03));
 }
 .product-card-visual { 
   flex-shrink: 0; 
@@ -586,7 +586,7 @@ nav .container {
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  box-shadow: 0 2px 8px rgba(232,93,4,0.25);
+  box-shadow: 0 2px 8px rgba(18,232,198,0.25);
 }
 
 /* ---- Affiliate button ---- */
@@ -621,7 +621,7 @@ nav .container {
 .affil-btn:hover { 
   transform: translateY(-2px); 
   color: #fff; 
-  box-shadow: 0 6px 20px rgba(232,93,4,0.35);
+  box-shadow: 0 6px 20px rgba(18,232,198,0.35);
 }
 .affil-btn:hover::before { left: 100%; }
 .affil-btn:active { transform: translateY(0); }

@@ -13,15 +13,142 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  
+  <!-- Custom Scoped Styling for Article Content (Nike Urban Light Vibe) -->
+  <style>
+    body {
+      background-color: var(--bg, #F7F7F9);
+      color: #1F2937;
+    }
+
+    .article-body {
+      max-width: 780px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .article-body h2 {
+      color: #111827;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E5E7EB;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .article-body h2 i {
+      color: #0AB8A0;
+    }
+
+    .article-body p {
+      color: #374151;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+
+    .article-body strong {
+      color: #111827;
+    }
+
+    /* Sommaire (TOC) fond clair */
+    .toc {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-left: 4px solid #0AB8A0;
+      border-radius: 12px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    
+    .toc-title {
+      color: #0AB8A0;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .toc li {
+      border-bottom: 1px dashed #F3F4F6;
+      padding: 0.5rem 0;
+    }
+
+    .toc a {
+      color: #374151;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: #0AB8A0;
+      transform: translateX(4px);
+    }
+
+    /* Section Link CTA Button */
+    .section-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FFFFFF;
+      border: 1.5px solid #0AB8A0;
+      color: #0AB8A0;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      margin: 0.8rem 0 1.8rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .section-link-btn:hover {
+      background: #0AB8A0;
+      color: #FFFFFF !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(10, 184, 160, 0.25);
+    }
+
+    .highlight-box {
+      background: #FFFFFF;
+      border-left: 4px solid #0AB8A0;
+      color: #374151;
+      border-radius: 0 10px 10px 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      border-top: 1px solid #F3F4F6;
+      border-right: 1px solid #F3F4F6;
+      border-bottom: 1px solid #F3F4F6;
+    }
+
+    .highlight-box strong {
+      color: #0AB8A0;
+    }
+
+    .affil-btn {
+      background: linear-gradient(135deg, #12E8C6 0%, #0AB8A0 100%);
+      color: #FFFFFF !important;
+      font-weight: 800;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(10, 184, 160, 0.25);
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Top 10 des accessoires indispensables pour trottinette électrique",
-    "description": "Les 10 accessoires indispensables pour rouler en trottinette électrique en toute sécurité et confort.",
+    "headline": "Top 10 des accessoires indispensables pour trottinette électrique (2026)",
+    "description": "Découvrez les 10 accessoires essentiels pour ta trottinette électrique : casque, antivol, éclairage, sacoche et plus. Guide complet.",
     "datePublished": "2026-07-28",
     "author": {"@type": "Organization", "name": "Trottinette Accessoires"}
   }
@@ -31,180 +158,143 @@
 
 <nav>
   <div class="container">
-    <a href="/" class="logo"><svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/><line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/><line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/></svg> Trottinette Accessoires</a>
+    <a href="/" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/>
+        <line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/>
+        <line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/>
+      </svg>
+      Trottinette Accessoires
+    </a>
     <ul class="nav-links">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/articles/">Guides</a></li>
+      <li><a href="/"><i class="ti ti-home"></i> Accueil</a></li>
+      <li><a href="/articles/" class="active">Guides</a></li>
       <li><a href="/a-propos.html">À propos</a></li>
     </ul>
   </div>
 </nav>
+
 <div class="progress-bar"><div class="progress-bar-fill" id="progressFill"></div></div>
 
 <section class="article-hero">
   <div class="container">
-    <p class="article-hero-breadcrumb"><a href="/">Accueil</a> › <a href="/articles/">Guides</a> › Top 10 accessoires</p>
-    <h1>Top 10 des accessoires indispensables pour trottinette électrique (2026)</h1>
+    <p class="article-hero-breadcrumb"><a href="/"><i class="ti ti-home"></i> Accueil</a> › <a href="/articles/">Guides</a> › Top 10 accessoires</p>
+    <h1>Top 10 des accessoires indispensables pour trottinette électrique (2026) 🛴</h1>
   </div>
 </section>
 
 <article class="article-body">
-  <p><strong>Vous venez d'acheter une trottinette électrique — ou vous en possédez déjà une — et vous vous demandez quels accessoires sont vraiment utiles ?</strong> Casque, antivol, éclairage, sacoche… Entre l'équipement obligatoire et les options bien pratiques, difficile de s'y retrouver.</p>
-<div class="toc">
-  <div class="toc-title">📋 Sommaire</div>
-  <ol>
-<li><a href="#section-1">1. Le casque — L'accessoire numéro 1 (obligatoire)</a></li>
-<li><a href="#section-2">2. L'antivol — Protégez ta investissement</a></li>
-<li><a href="#section-3">3. L'éclairage — Être vu pour survivre</a></li>
-<li><a href="#section-4">4. La sacoche ou le top case — Rangez tes affaires</a></li>
-<li><a href="#section-5">5. Le support téléphone — Ta GPS toujours sous les yeux</a></li>
-<li><a href="#section-6">6. Les gants — Confort et sécurité</a></li>
-<li><a href="#section-7">7. Le kit anti-crevaison — Parer à l'urgence</a></li>
-<li><a href="#section-8">8. Le casque à mémoire de forme — Le confort longue distance</a></li>
-<li><a href="#section-9">9. Le gilet réfléchissant — La sécurité passive</a></li>
-<li><a href="#section-10">10. L'extension de garantie ou l'assurance</a></li>
-<li><a href="#section-11">Budget récapitulatif</a></li>
-<li><a href="#section-12">Conclusion</a></li>
-<li><a href="#section-13">Tu as aimé ce guide ?</a></li>
-  </ol>
-</div>
-  <p>Dans ce guide, on a listé les <strong>10 accessoires indispensables</strong> classés par priorité, avec nos recommandations pour chaque catégorie. Que vous rouliez en ville pour tes trajets domicile-travail ou le week-end pour le plaisir, vous saurez exactement par où commencer.</p>
 
-  <h2 id="section-1">1. Le casque — L'accessoire numéro 1 (obligatoire)</h2>
-  <p>Depuis l'évolution de la réglementation, le port du casque est <strong>obligatoire pour les moins de 16 ans</strong> — mais on vous recommande de le porter quel que soit ta âge. En 2022, la France a recensé <strong>34 décès</strong> liés aux trottinettes électriques. Un bon casque peut faire toute la différence.</p>
-  <p><strong>Ce qu'il faut regarder :</strong></p>
-  <ul>
-    <li>Norme EN 1078 (obligatoire pour les casques vélo/trottinette)</li>
-    <li>Ventilation : pour ne pas transpirer en été</li>
-    <li>Poids : moins de 400g pour un confort optimal</li>
-    <li>Système de réglage : molette à l'arrière pour un maintien parfait</li>
-  </ul>
-  <p><strong>Budget recommandé :</strong> 30 à 80€ pour un bon rapport qualité-prix.</p>
+  <p><strong>Tu viens d'acquérir une trottinette électrique ou tu souhaites améliorer ta sécurité au quotidien ?</strong> Sortie de carton, une trottinette manque souvent d'équipements de protection et de rangement. Voici le classement des 10 accessoires indispensables pour rouler en toute sérénité.</p>
 
-  <div class="product-card best-choice"    <div class="product-card-visual">
-<div class="best-choice-badge">🏆 Meilleur choix</div><i class="ti ti-star" aria-hidden="true"></i></div>
-    <div class="product-card-info">
-      <h4>Notre recommandation : Casque Abus Urban-I 2.0</h4>
-      <p>Léger (350g), très bien ventilé, design sobre. Un des meilleurs rapports qualité-prix du marché.</p>
-      <span class="product-card-price">~59€</span>
-    </div>
-    <a class="product-card-cta" href="https://www.amazon.fr/s?k=accessoires+trottinette+%C3%A9lectrique&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">🇫🇷 Voir le prix</a>
+  <div class="toc">
+    <div class="toc-title">📋 Sommaire du classement</div>
+    <ol>
+      <li><a href="#section-1">1. Le Casque Homologué (Sécurité n°1)</a></li>
+      <li><a href="#section-2">2. L'Antivol en U ou Pliant (Protection vol)</a></li>
+      <li><a href="#section-3">3. La Sacoche de Guidon Étanche (Rangement)</a></li>
+      <li><a href="#section-4">4. Le Phare LED Additionnel (Visibilité nuit)</a></li>
+      <li><a href="#section-5">5. Le Support Téléphone Anti-Vibrations (GPS)</a></li>
+      <li><a href="#section-6">6. Les Gants Renforcés (Protection &amp; Froid)</a></li>
+      <li><a href="#section-7">7. Le Kit d'Entretien &amp; Anti-Crevaison</a></li>
+      <li><a href="#section-8">8. La Veste / Gilet Réfléchissant</a></li>
+      <li><a href="#section-9">9. Les Accessoires à Moins de 30€</a></li>
+      <li><a href="#section-10">10. L'Équipement Commuter Spécial Travail</a></li>
+    </ol>
   </div>
 
-  <h2 id="section-2">2. L'antivol — Protégez ta investissement</h2>
-  <p>Avec plus d'un million de trottinettes vendues par an en France, le vol est une réalité. Une trottinette coûte entre 200€ et 800€ — un bon antivol coûte 30 à 60€. L'investissement est vite rentabilisé.</p>
-  <p><strong>Les 3 types d'antivols :</strong></p>
-  <ul>
-    <li><strong>Antivol en U :</strong> Le plus solide. Idéal pour attacher la trottinette à un point fixe.</li>
-    <li><strong>Antivol pliant :</strong> Bon compromis entre solidité et transport facile.</li>
-    <li><strong>Antivol à chaîne :</strong> Très résistant mais plus lourd à transporter.</li>
-  </ul>
-
-  <div class="product-card">
-    <div class="product-card-visual"><i class="ti ti-lock" aria-hidden="true"></i></div>
-    <div class="product-card-info">
-      <h4>Notre recommandation : Kryptonite Evolution Mini-7</h4>
-      <p>Antivol en U, niveau de sécurité 7/10, compact et facile à transporter dans une sacoche.</p>
-      <span class="product-card-price">~49€</span>
-    </div>
-    <a class="product-card-cta" href="https://www.amazon.fr/s?k=accessoires+trottinette+%C3%A9lectrique&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">🇫🇷 Voir le prix</a>
-  </div>
-
-  <h2 id="section-3">3. L'éclairage — Être vu pour survivre</h2>
-  <p>La plupart des trottinettes sont livrées avec un éclairage basique insuffisant. Un bon kit éclairage vous rend visible la nuit et par mauvais temps. C'est aussi <strong>obligatoire</strong> : feu avant blanc/jaune + feu arrière rouge + catadioptres.</p>
-  <p><strong>Ce qu'on recommande :</strong></p>
-  <ul>
-    <li>Feu avant : minimum 50 lumens pour la ville, 100+ pour les routes peu éclairées</li>
-    <li>Feu arrière : clignotant de préférence, visible à 300m</li>
-    <li>Autonomie : au moins 5 heures en mode continu</li>
-    <li>Fixation : rapide, idéalement amovible pour éviter le vol</li>
-  </ul>
-
-  <h2 id="section-4">4. La sacoche ou le top case — Rangez tes affaires</h2>
-  <p>Sans rangement, tu dois tout porter dans un sac à dos. Une sacoche de guidon (10-40€) ou un top case (30-80€) change complètement l'expérience : tes clés, ta portable, ta chargeur sont à portée de main.</p>
-  <ul>
-    <li><strong>Sacoche de guidon :</strong> Pratique pour le quotidien, capacité 2-5L</li>
-    <li><strong>Top case / coffre :</strong> Verrouillable, idéal pour laisser des affaires dans la trottinette</li>
-    <li><strong>Sacoche sous selle :</strong> Discrète, pour l'essentiel</li>
-  </ul>
-
-  <h2 id="section-5">5. Le support téléphone — Ta GPS toujours sous les yeux</h2>
-  <p>utiliser son téléphone en main en roulant est dangereux et passible d'une amende de 135€. Un support téléphone (10-30€) fixé au guidon vous permet de suivre ta itinéraire en toute sécurité.</p>
-  <p><strong>Critères importants :</strong> fixation robuste, étanche (pour la pluie), compatible avec ta taille de téléphone, et qui ne vibre pas trop.</p>
-
-  <h2 id="section-6">6. Les gants — Confort et sécurité</h2>
-  <p>En hiver, le froid sur les mains est pénible. Mais même en été, des gants protègent tes paumes en cas de chute. Des gants spécifiques trottinette/vélo existent à partir de 20€.</p>
-  <ul>
-    <li><strong>Gants d'été :</strong> Légers, aérés, avec gel anti-vibrations</li>
-    <li><strong>Gants d'hiver :</strong> Isolants, imperméables, compatibles écran tactile</li>
-  </ul>
-
-  <h2 id="section-7">7. Le kit anti-crevaison — Parer à l'urgence</h2>
-  <p>Rien de plus frustrant qu'une crevaison à 3km de chez vous. Un petit kit de réparation (pneus + chambres à air de rechange + démonte-pneus) vous sort de presque toutes les situations. Comptez 15-30€.</p>
-
-  <h2 id="section-8">8. Le casque à mémoire de forme — Le confort longue distance</h2>
-  <p>Si vous roulez plus de 30 minutes par jour, investissez dans un casque avec <strong>mousses à mémoire de forme</strong>. Le confort n'a rien à voir avec les casques d'entrée de gamme. Budget : 60-120€.</p>
-
-  <h2 id="section-9">9. Le gilet réfléchissant — La sécurité passive</h2>
-  <p>Obligatoire hors agglomération la nuit, le gilet réfléchissant est une assurance-vie à 5-15€. On en trouve des versions stylisées qui ne font pas "chantier" si l'esthétique vous importe.</p>
-
-  <h2 id="section-10">10. L'extension de garantie ou l'assurance</h2>
-  <p>Ta trottinette peut être assurée (responsabilité civile + vol + dommages). Certaines assurances habitation couvrent déjà les EDPM. Vérifiez ta contrat. Une assurance spécifique coûte environ 5-10€/mois.</p>
-
-  <h2 id="section-11">Budget récapitulatif</h2>
-  <table style="width:100%; border-collapse: collapse; margin: 1rem 0;">
-    <tr style="background: #1B4332; color: #fff;">
-      <th style="padding: 0.5rem; text-align: left;">Accessoire</th>
-      <th style="padding: 0.5rem; text-align: right;">Budget mini</th>
-      <th style="padding: 0.5rem; text-align: right;">Budget recommandé</th>
-    </tr>
-    <tr style="border-bottom: 1px solid #ddd;">
-      <td style="padding: 0.5rem;">Casque</td>
-      <td style="padding: 0.5rem; text-align: right;">30€</td>
-      <td style="padding: 0.5rem; text-align: right;">50-80€</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ddd;">
-      <td style="padding: 0.5rem;">Antivol</td>
-      <td style="padding: 0.5rem; text-align: right;">20€</td>
-      <td style="padding: 0.5rem; text-align: right;">40-60€</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ddd;">
-      <td style="padding: 0.5rem;">Éclairage</td>
-      <td style="padding: 0.5rem; text-align: right;">15€</td>
-      <td style="padding: 0.5rem; text-align: right;">30-50€</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ddd;">
-      <td style="padding: 0.5rem;">Sacoche</td>
-      <td style="padding: 0.5rem; text-align: right;">15€</td>
-      <td style="padding: 0.5rem; text-align: right;">25-40€</td>
-    </tr>
-    <tr style="border-bottom: 1px solid #ddd;">
-      <td style="padding: 0.5rem;">Support téléphone</td>
-      <td style="padding: 0.5rem; text-align: right;">10€</td>
-      <td style="padding: 0.5rem; text-align: right;">15-25€</td>
-    </tr>
-    <tr style="background: #f0f0f0;">
-      <td style="padding: 0.5rem; font-weight: 700;">Total équipement de base</td>
-      <td style="padding: 0.5rem; text-align: right; font-weight: 700;">~90€</td>
-      <td style="padding: 0.5rem; text-align: right; font-weight: 700;">~160-255€</td>
-    </tr>
-  </table>
-
-  <h2 id="section-12">Conclusion</h2>
-  <p>Pas besoin de tout acheter d'un coup. Commencez par <strong>le casque et l'antivol</strong> (sécurité avant tout), puis ajoutez l'éclairage si celui de ta trottinette est insuffisant. La sacoche et le support téléphone viendront ensuite pour le confort au quotidien.</p>
-  <p>Tu as maintenant toutes les cartes en main pour équiper ta trottinette comme un pro. N'hésitez pas à consulter nos guides dédiés pour chaque catégorie d'accessoire.</p>
-
-  <a class="affil-btn" href="https://www.amazon.fr/s?k=accessoires+trottinette+%C3%A9lectrique&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">
-    🛒 Voir les accessoires sur Amazon
-    <small>Liens commerciaux</small>
+  <!-- SECTION 1 : CASQUE -->
+  <h2 id="section-1"><i class="ti ti-helmet"></i> 1. Le Casque Homologué (Priorité Absolue)</h2>
+  <p>En ville, le casque n'est pas une option. Les chutes à 25 km/h provoquent en majorité des traumatismes crâniens. Un bon casque doit être certifié <strong>EN 1078</strong> et peser moins de 400g pour rester agréable sur de longs trajets.</p>
+  <a href="/articles/meilleur-casque-trottinette-electrique.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Lire le comparatif complet des casques trottinette
   </a>
+
+  <!-- SECTION 2 : ANTIVOL -->
+  <h2 id="section-2"><i class="ti ti-lock"></i> 2. L'Antivol U ou Pliant</h2>
+  <p>Une trottinette non attachée disparaît en quelques secondes. Les câbles fins se coupent facilement : privilégie un antivol en U massif en acier trempé ou un antivol pliant de marque réputée (Kryptonite, Abus).</p>
+  <a href="/articles/meilleur-antivol-trottinette-electrique.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Voir le comparatif des meilleurs antivols trottinette
+  </a>
+
+  <!-- SECTION 3 : SACOCHE -->
+  <h2 id="section-3"><i class="ti ti-backpack"></i> 3. La Sacoche de Guidon Étanche</h2>
+  <p>Libère ton dos du sac lourd. Une sacoche rigide en coque EVA fixée au mât avant permet de ranger ton chargeur, ton antivol compact et tes clés à l'abri de la pluie.</p>
+  <a href="/articles/sacoche-trottinette-electrique.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Choisir sa sacoche de guidon étanche
+  </a>
+
+  <!-- SECTION 4 : ECLAIRAGE -->
+  <h2 id="section-4"><i class="ti ti-bulb"></i> 4. Le Phare LED Additionnel</h2>
+  <p>Les feux d'origine placés en bas de la plateforme ne suffisent pas pour éclairer la route de nuit. Un phare LED d'au moins 300 à 500 lumens fixé sur le guidon est indispensable.</p>
+  <a href="/articles/kit-eclairage-trottinette-electrique.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Consulter le guide d'éclairage LED &amp; Lumens
+  </a>
+
+  <!-- SECTION 5 : SUPPORT TELEPHONE -->
+  <h2 id="section-5"><i class="ti ti-device-mobile"></i> 5. Le Support Téléphone Anti-Vibrations</h2>
+  <p>Suis tes itinéraires GPS Waze ou Google Maps sans risque. Opte pour un support à housse étanche ou à pince aluminium avec patins en silicone pour préserver l'appareil photo.</p>
+  <a href="/articles/support-telephone-trottinette.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Sélection des meilleurs supports smartphone
+  </a>
+
+  <!-- SECTION 6 : GANTS -->
+  <h2 id="section-6"><i class="ti ti-shield-check"></i> 6. Les Gants Renforcés (Hiver &amp; Sécurité)</h2>
+  <p>En cas de chute, le premier réflexe est de poser les mains au sol. Des gants avec renforts de paume protègent la peau et te gardent au chaud lors des trajets hivernaux.</p>
+  <a href="/articles/gants-trottinette-electrique-hiver.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Voir le guide des gants d'hiver pour trottinette
+  </a>
+
+  <!-- SECTION 7 : ENTRETIEN -->
+  <h2 id="section-7"><i class="ti ti-tool"></i> 7. Le Kit d'Entretien &amp; Anti-Crevaison</h2>
+  <p>Vérifier la pression des pneus chaque semaine est le secret pour éviter 90% des crevaisons. Garde une pompe portable et une bombe anti-crevaison à portée de main.</p>
+  <a href="/articles/guide-entretien-trottinette-electrique.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Guide complet d'entretien &amp; pression pneu
+  </a>
+
+  <!-- SECTION 8 : HIVER & PLUIE -->
+  <h2 id="section-8"><i class="ti ti-cloud-rain"></i> 8. Équipement Pluie &amp; Hiver</h2>
+  <p>Ne laisse pas la météo stopper tes trajets. Une veste imperméable respirante et des manchons de guidon te permettent de rouler toute l'année au sec.</p>
+  <a href="/articles/trottinette-sous-la-pluie.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Tout savoir pour rouler sous la pluie en sécurité
+  </a>
+
+  <!-- SECTION 9 : PAS CHERS -->
+  <h2 id="section-9"><i class="ti ti-coin"></i> 9. Accessoires Malin à Moins de 30€</h2>
+  <p>Rétroviseur orientable, crochet de potence pour sac de courses, sonnette puissante : de petits ajouts économiques qui améliorent grandement le quotidien.</p>
+  <a href="/articles/accessoires-trottinette-pas-chers.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Découvrir les accessoires pas chers à moins de 30€
+  </a>
+
+  <!-- SECTION 10 : COMMUTER TRAVAIL -->
+  <h2 id="section-10"><i class="ti ti-briefcase"></i> 10. Kit Spécial Trajet Domicile-Travail</h2>
+  <p>Pour les commuters urbains : sac à dos étanche pour ordinateur portable 15 pouces et poignée de transport sangle pour porter la trottinette dans le métro.</p>
+  <a href="/articles/accessoires-trottinette-trajet-travail.html" class="section-link-btn">
+    <i class="ti ti-arrow-right"></i> Équiper sa trottinette pour les trajets travail
+  </a>
+
+  <!-- TABLEAU RECAP -->
+  <h2><i class="ti ti-table"></i> Budget Récapitulatif Recommandé</h2>
+  <div class="highlight-box">
+    <strong>• Équipement de base (Casque + Antivol U) :</strong> ~90€ à 120€<br>
+    <strong>• Équipement complet (Casque + Antivol + Sacoche + Phare + Support) :</strong> ~160€ à 220€
+  </div>
+
+  <h2 id="section-12"><i class="ti ti-checkup-list"></i> Verdict : Par quoi commencer ?</h2>
+
+  <p>Investis en priorité dans **le casque et l'antivol en U**. Ce sont tes deux piliers de sécurité. Complète ensuite avec la sacoche et le support smartphone selon tes besoins quotidiens.</p>
+
+  <a class="affil-btn" href="https://www.amazon.fr/s?k=accessoires+trottinette+%C3%A9lectrique&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored" style="margin: 2rem auto; display: flex;">
+    <i class="ti ti-brand-amazon"></i> Voir les meilleurs accessoires sur Amazon
+  </a>
+
 </article>
 
 <section class="cta-section">
   <div class="container">
-    <h2 id="section-13">Tu as aimé ce guide ?</h2>
-    <p>Consultez nos autres comparatifs pour trouver l'accessoire qu'il vous faut.</p>
-    <a href="/articles/" class="btn btn-primary">Voir tous les guides →</a>
+    <h2>Prêt à équiper ta trottinette ?</h2>
+    <p>Consulte tous nos guides comparatifs et roule en toute sérénité.</p>
+    <a href="/" class="btn btn-primary"><i class="ti ti-home"></i> Retourner à l'accueil</a>
   </div>
 </section>
 
@@ -212,8 +302,8 @@
   <div class="container">
     <div>
       <h4>🛴 Trottinette Accessoires</h4>
-      <p>Ton guide complet pour choisir les meilleurs accessoires de trottinette électrique.</p>
-      <p class="affil-note">Ce site participe au Programme Amazon FR. En cliquant sur nos liens et en effectuant un achat, nous percevons une commission.</p>
+      <p>Ton guide urbain indépendant pour choisir les meilleurs équipements de trottinette électrique.</p>
+      <p class="affil-note">Ce site participe au Programme Amazon FR. En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises.</p>
     </div>
     <div>
       <h4>Catégories</h4>
@@ -224,18 +314,18 @@
       </ul>
     </div>
     <div>
-      <h4>Liens utiles</h4>
+      <h4>Navigation</h4>
       <ul>
+        <li><a href="/"><i class="ti ti-home"></i> Accueil</a></li>
         <li><a href="/a-propos.html">À propos</a></li>
         <li><a href="/mentions-legales.html">Mentions légales</a></li>
       </ul>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Trottinette Accessoires</p>
+      <p>&copy; 2026 Trottinette Accessoires — Tous droits réservés.</p>
     </div>
   </div>
 </footer>
-
 
 <script>
 window.addEventListener('scroll', function() {
@@ -246,5 +336,6 @@ window.addEventListener('scroll', function() {
   if (fill) fill.style.width = progress + '%';
 });
 </script>
+
 </body>
 </html>

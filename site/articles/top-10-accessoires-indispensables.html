@@ -159,20 +159,20 @@
 <nav>
   <div class="container">
     <a href="/" class="logo">
-      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/>
-        <line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/>
-        <line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/>
-      </svg>
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/><line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/><line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/></svg>
       Trottinette Accessoires
     </a>
-        <ul class="nav-links">
-      <li><a href="/"><i class="ti ti-home"></i> Accueil</a></li>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <i class="ti ti-menu-2"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" ><i class="ti ti-home"></i> Accueil</a></li>
       <li><a href="/articles/" class="active">Guides</a></li>
-      <li><a href="/a-propos.html">À propos</a></li>
+      <li><a href="/a-propos.html" >À propos</a></li>
     </ul>
   </div>
 </nav>
+<div id="navOverlay" class="nav-overlay"></div>
 
 <div class="progress-bar"><div class="progress-bar-fill" id="progressFill"></div></div>
 
@@ -336,5 +336,6 @@ window.addEventListener('scroll', function() {
 });
 </script>
 
+  <script src="/js/nav.js"></script>
 </body>
 </html>

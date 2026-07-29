@@ -13,15 +13,285 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  
+  <!-- Custom Scoped Styling for Article Content (Nike Urban Light Vibe) -->
+  <style>
+    body {
+      background-color: var(--bg, #F7F7F9);
+      color: #1F2937;
+    }
+
+    .article-body {
+      max-width: 780px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .article-body h2 {
+      color: #111827;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E5E7EB;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .article-body h2 i {
+      color: #0AB8A0;
+    }
+
+    .article-body h3 {
+      color: #111827;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 1.8rem 0 0.8rem;
+    }
+
+    .article-body p {
+      color: #374151;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+
+    .article-body strong {
+      color: #111827;
+    }
+
+    /* Figures & Images */
+    .article-image-box {
+      margin: 2.2rem 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .article-image-box:hover {
+      box-shadow: 0 10px 32px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .article-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    figcaption {
+      padding: 0.85rem 1.2rem;
+      font-size: 0.86rem;
+      color: #4B5563;
+      background: #F9FAFB;
+      border-top: 1px solid #F3F4F6;
+      line-height: 1.5;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Sommaire (TOC) fond clair */
+    .toc {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-left: 4px solid #0AB8A0;
+      border-radius: 12px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    
+    .toc-title {
+      color: #0AB8A0;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .toc li {
+      border-bottom: 1px dashed #F3F4F6;
+      padding: 0.5rem 0;
+    }
+
+    .toc a {
+      color: #374151;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: #0AB8A0;
+      transform: translateX(4px);
+    }
+
+    /* Badges de Spécifications */
+    .spec-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    .spec-badge {
+      background: rgba(18, 232, 198, 0.12);
+      border: 1px solid rgba(10, 184, 160, 0.3);
+      color: #0AB8A0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Product Review Cards (Fond Clair) */
+    .product-review-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    .product-review-card:hover {
+      border-color: #0AB8A0;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .product-review-card.featured {
+      border: 2px solid #0AB8A0;
+      background: linear-gradient(180deg, #FFFFFF 0%, rgba(18, 232, 198, 0.04) 100%);
+    }
+
+    .product-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #111827;
+      margin: 0;
+    }
+
+    .product-price-tag {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #0AB8A0;
+      white-space: nowrap;
+    }
+
+    .pros-cons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.2rem 0 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .pros-cons-grid { grid-template-columns: 1fr; }
+    }
+
+    .pros-box, .cons-box {
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      border: 1px solid #E5E7EB;
+    }
+
+    .pros-box {
+      background: rgba(18, 232, 198, 0.06);
+      border-left: 4px solid #0AB8A0;
+    }
+
+    .cons-box {
+      background: rgba(255, 71, 87, 0.06);
+      border-left: 4px solid #FF4757;
+    }
+
+    .pros-box h5, .cons-box h5 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    .pros-box h5 { color: #0AB8A0; }
+    .cons-box h5 { color: #DC2626; }
+
+    .pros-box ul, .cons-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pros-box li, .cons-box li {
+      font-size: 0.88rem;
+      color: #374151;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .pros-box li i { color: #0AB8A0; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+    .cons-box li i { color: #DC2626; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+
+    .affil-btn {
+      background: linear-gradient(135deg, #12E8C6 0%, #0AB8A0 100%);
+      color: #FFFFFF !important;
+      font-weight: 800;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(10, 184, 160, 0.25);
+    }
+
+    .affil-btn:hover {
+      box-shadow: 0 6px 24px rgba(10, 184, 160, 0.4);
+      color: #FFFFFF !important;
+    }
+
+    .highlight-box {
+      background: #FFFFFF;
+      border-left: 4px solid #0AB8A0;
+      color: #374151;
+      border-radius: 0 10px 10px 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      border-top: 1px solid #F3F4F6;
+      border-right: 1px solid #F3F4F6;
+      border-bottom: 1px solid #F3F4F6;
+    }
+
+    .highlight-box strong {
+      color: #0AB8A0;
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Sacoche trottinette électrique : quel modèle choisir pour ranger ses affaires ?",
-    "description": "Guide des sacoches pour trottinette électrique : sacoche de guidon, top case verrouillable, sacoche sous selle. Capacité, fixation, étanchéité et prix.",
+    "headline": "Sacoche trottinette électrique : guidon, top case ou sous selle ?",
+    "description": "Quelle sacoche pour trottinette électrique choisir ? Guide complet des sacoches de guidon, top case et sacoches sous selle. Capacité, fixation, étanchéité.",
     "datePublished": "2026-07-28",
     "author": {"@type": "Organization", "name": "Trottinette Accessoires"}
   }
@@ -31,14 +301,22 @@
 
 <nav>
   <div class="container">
-    <a href="/" class="logo"><svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/><line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/><line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/></svg> Trottinette Accessoires</a>
+    <a href="/" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/>
+        <line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/>
+        <line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/>
+      </svg>
+      Trottinette Accessoires
+    </a>
     <ul class="nav-links">
       <li><a href="/">Accueil</a></li>
-      <li><a href="/articles/">Guides</a></li>
+      <li><a href="/articles/" class="active">Guides</a></li>
       <li><a href="/a-propos.html">À propos</a></li>
     </ul>
   </div>
 </nav>
+
 <div class="progress-bar"><div class="progress-bar-fill" id="progressFill"></div></div>
 
 <section class="article-hero">
@@ -49,96 +327,105 @@
 </section>
 
 <article class="article-body">
-  <p><strong>Marre du sac à dos qui te fait transpirer ?</strong> C'est le problème numéro un des utilisateurs de trottinette en été. La solution s'appelle la sacoche de trottinette. Sacoche de guidon, top case ou sous-selle : chaque type a son usage. On t'aide à trouver le rangement qui correspond à ton quotidien.</p>
-<div class="toc">
-  <div class="toc-title">📋 Sommaire</div>
-  <ol>
-<li><a href="#section-1">La sacoche de guidon : la plus pratique au quotidien</a></li>
-<li><a href="#section-2">Le top case (coffre) : le rangement sécurisé</a></li>
-<li><a href="#section-3">La sacoche sous selle : la solution discrète</a></li>
-<li><a href="#section-4">Sacoche étanche : l'investissement qui vaut le coup</a></li>
-<li><a href="#section-5">Comment choisir selon ta usage</a></li>
-<li><a href="#section-6">Conclusion</a></li>
-<li><a href="#section-7">Tu as aimé ce guide ?</a></li>
-  </ol>
-</div>
-  <p>Il existe trois grandes familles de rangement pour trottinette électrique : la sacoche de guidon, le top case et la sacoche sous selle. Chacune a ses avantages et ses inconvénients. Ce guide vous aide à choisir celle qui correspond a ta usage.</p>
 
-  <h2 id="section-1">La sacoche de guidon : la plus pratique au quotidien</h2>
-  <p>La sacoche de guidon se fixe directement sur le guidon de ta trottinette, a portée de main. C'est la solution la plus populaire pour les trajets du quotidien. Elle se décline en plusieurs tailles, de 1 litre pour le strict minimum a 5 litres pour transporter un repas ou une petite veste.</p>
+  <p><strong>Marre du sac à dos qui fait transpirer en plein été ?</strong> Porter un sac lourd au dos altère ton centre de gravité et fatigue les épaules sur les longs trajets. La solution idéale : équiper ta trottinette d'une sacoche rigide étanche fixée au mât ou au guidon.</p>
 
-  <h3>Les avantages</h3>
-  <ul>
-    <li>Acces facile a tes affaires pendant la conduite (attention à ne pas vous distraire)</li>
-    <li>Installation et demontage rapides, souvent sans outil</li>
-    <li>Prix abordable : entre 10 et 40 euros</li>
-    <li>Legere et n'affecte pas l'equilibre de la trottinette</li>
-  </ul>
+  <!-- IMAGE INTEGRATED -->
+  <figure class="article-image-box">
+    <img src="/images/articles/sacoche-guidon-etanche.jpg" alt="Sacoche rigide étanche fixée sur la potence d'une trottinette électrique en ville" class="article-img">
+    <figcaption>La sacoche rigide de guidon en EVA (type Wild Man) offre un volume idéal pour transporter son chargeur, ses clés et son petit matériel sans alourdir le sac à dos.</figcaption>
+  </figure>
 
-  <h3>Les inconvénients</h3>
-  <ul>
-    <li>Capacite limitee (rarement plus de 5 litres)</li>
-    <li>Pas toujours étanche : vérifiez bien la description</li>
-    <li>Peut gener l'acces aux commandes du guidon si mal placee</li>
-    <li>Vulnerable au vol si vous laissez tes affaires dedans</li>
-  </ul>
-
-  <p>Notre conseil : choisissez un modele avec sangle de fixation large et patins anti-glissement. Les sacoches en tissu enduit ou en polyester déperlant sont a privilégier pour résister aux intemperies.</p>
-
-  <h2 id="section-2">Le top case (coffre) : le rangement sécurisé</h2>
-  <p>Le top case est un coffre rigide qui se fixe sur le plateau arrière de certaines trottinettes. Il offre l'avantage d'etre verrouillable et étanche. Tu peux y laisser ta chargeur, tes gants ou ta casque sans craindre le vol ou la pluie. C'est la solution préférée de ceux qui utilisent leur trottinette pour aller au travail.</p>
-
-  <h3>Points forts</h3>
-  <ul>
-    <li>sécurisé : fermeture a cle ou code, les affaires sont en sécurité</li>
-    <li>étanche : protection totale contre la pluie</li>
-    <li>Capacite : généralement 10 a 25 litres, de quoi ranger un casque</li>
-    <li>Fixation permanente : pas besoin de l'enlever a chaque arret</li>
-  </ul>
-
-  <h3>Points faibles</h3>
-  <ul>
-    <li>Prix plus élevé : 30 a 80 euros</li>
-    <li>Poids supplémentaire sur la trottinette</li>
-    <li>Ne convient pas a toutes les trottinettes : vérifiez la compatibilité</li>
-    <li>Peut alterer legerement la maniabilité</li>
-  </ul>
-
-  <h2 id="section-3">La sacoche sous selle : la solution discrète</h2>
-  <p>Moins connue mais très pratique, la sacoche sous selle se fixe sous la plaque ou la selle de la trottinette. Elle est discrete et n'affecte pas l'esthetique du vehicule. Sa capacité est reduite (1 a 2 litres), juste assez pour un porte-monnaie, des clés et un téléphone. Elle est idéale pour les trajets courts où vous ne voulez pas vous encombrer.</p>
-
-  <h2 id="section-4">Sacoche étanche : l'investissement qui vaut le coup</h2>
-  <p>Si vous roulez par tous les temps, ne lésinez pas sur l'etancheite. Une sacoche non étanche, c'est un téléphone mouille et des papiers detruits à la premiere grosse averse. Les sacoches avec zip étanche (type rouleau) ou en tissu PVC soudé sont les plus fiables. Comptez 5 a 15 euros de plus pour cette caractéristique. Sur le long terme, c'est de l'argent bien investi.</p>
-
-  <div class="product-card best-choice"    <div class="product-card-visual">
-<div class="best-choice-badge">🏆 Meilleur choix</div><i class="ti ti-bag" aria-hidden="true"></i></div>
-    <div class="product-card-info">
-      <h4>Notre recommandation : Sacoche de guidon étanche 3-5L</h4>
-      <p>Polyester déperlant, fixation universelle par sangles, capacité 3-5 litres. Compatible avec tous les guidons de trottinette. Idéale pour le quotidien.</p>
-      <span class="product-card-price">~25€</span>
-<p>Attention : la fixation par sangles de cette sacoche a tendance à se desserrer avec les vibrations. Vérifie-la tous les deux jours si tu roules sur des pavés, sinon tu risques de la retrouver par terre.</p>
-    </div>
-    <a class="product-card-cta" href="https://www.amazon.fr/s?k=sacoche+trottinette+%C3%A9lectrique+guidon&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">🇫🇷 Voir le prix</a>
+  <div class="toc">
+    <div class="toc-title">📋 En un coup d'œil</div>
+    <ol>
+      <li><a href="#section-1">1. Pourquoi la sacoche de guidon est le choix n°1</a></li>
+      <li><a href="#section-2">2. Notre recommandation : Sacoche Rigide 2L - 4L</a></li>
+      <li><a href="#section-3">3. Les 3 critères de choix : Capacité, Fixation, Étanchéité</a></li>
+      <li><a href="#section-4">4. Top Case &amp; Sacoche sous selle : Pour qui ?</a></li>
+    </ol>
   </div>
 
-  <h2 id="section-5">Comment choisir selon ta usage</h2>
-  <p>Pas de sacoche universelle : tout depend de comment vous utilisez ta trottinette. Pour les trajets domicile-travail avec chargeur et dejeuner, un top case ou une grande sacoche de guidon est le meilleur choix. Pour les courses rapides ou les sorties du soir, la petite sacoche de guidon suffit amplement. Si vous cherchez la discrétion et que vous transportez peu de choses, la sacoche sous selle fait le job.</p>
-  <p>Beaucoup d'utilisateurs finissent par combiner deux solutions : une sacoche de guidon pour les affaires du quotidien et un coffre ou top case pour le chargeur et le casque. Cette configuration offre le meilleur des deux mondes : accès facile et rangement sécurisé.</p>
+  <h2 id="section-1"><i class="ti ti-backpack"></i> 1. Pourquoi la sacoche de guidon est le choix n°1</h2>
 
-  <h2 id="section-6">Conclusion</h2>
-  <p>La sacoche de guidon reste le meilleur choix pour la majorite des utilisateurs de trottinette électrique. Pratique, abordable et facile a installer, elle répond aux besoins du quotidien sans complication. Si vous cherchez plus de capacite et de sécurité, le top case est un investissement qui vaut le coup, notamment pour les trajets professionnels. Et si vous ne transportez que le strict minimum, la sacoche sous selle est l'option la plus discrete.</p>
+  <p>Fixée sur la potence avant grâce à des sangles scratch réglables, la sacoche de guidon offre un accès instantané à tes affaires sans déséquilibrer l'engin. C'est l'accessoire indispensable pour stocker :</p>
 
-  <a class="affil-btn" href="https://www.amazon.fr/s?k=sacoche+trottinette+%C3%A9lectrique&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">
-    🛒 Voir les sacoches sur Amazon
-    <small>Liens commerciaux</small>
+  <div class="highlight-box">
+    <strong>• Le chargeur secteur de ta trottinette</strong> (pour recharger au bureau)<br>
+    <strong>• Un antivol compact (bloque-disque ou pliant)</strong><br>
+    <strong>• Tes clés, ton portefeuille et une paire de gants de rechange</strong>
+  </div>
+
+  <h2 id="section-2"><i class="ti ti-trophy"></i> 2. Notre recommandation : Sacoche Rigide EVA 2L à 4L</h2>
+
+  <!-- PRODUIT 1 : SACOCHE WILD MAN -->
+  <div class="product-review-card featured">
+    <div class="product-header-row">
+      <div>
+        <div class="spec-badge">🏆 Le Incontournable</div>
+        <h3 class="product-title">Sacoche Rigide Wild Man 3L / 4L</h3>
+      </div>
+      <span class="product-price-tag">~25 €</span>
+    </div>
+
+    <div class="spec-badges">
+      <span class="spec-badge">Coque Rigide EVA</span>
+      <span class="spec-badge">Double Zip Étanche</span>
+      <span class="spec-badge">Fixation 4 Sangles</span>
+    </div>
+
+    <p>Conçue en coque moulée en plastique EVA effet carbone, elle résiste aux choc et à la pluie battante. Son intérieur compartimenté avec filet évite que le chargeur ne se balade dans tous les sens.</p>
+
+    <div class="pros-cons-grid">
+      <div class="pros-box">
+        <h5><i class="ti ti-thumb-up"></i> Ce qu'on adore</h5>
+        <ul>
+          <li><i class="ti ti-check"></i> Coque rigide antichoc très protectrice</li>
+          <li><i class="ti ti-check"></i> Étanchéité parfaite sous la pluie</li>
+          <li><i class="ti ti-check"></i> Installation universelle rapide en 1 minute</li>
+        </ul>
+      </div>
+      <div class="cons-box">
+        <h5><i class="ti ti-thumb-down"></i> Ce qu'on aime moins</h5>
+        <ul>
+          <li><i class="ti ti-x"></i> Ne convient pas pour porter des vêtements volumineux</li>
+          <li><i class="ti ti-x"></i> Doit être retirée si tu laisses la trottinette dehors longtemps</li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="affil-btn" href="https://www.amazon.fr/s?k=sacoche+trottinette+%C3%A9lectrique+guidon&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">
+      <i class="ti ti-shopping-cart"></i> Voir la sacoche Wild Man sur Amazon
+    </a>
+  </div>
+
+  <h2 id="section-3"><i class="ti ti-checklist"></i> 3. Les 3 critères de choix</h2>
+
+  <ul>
+    <li><strong>L'étanchéité :</strong> Opte impérativement pour un modèle déperlant avec fermetures étanches zippées pour protéger le matériel électronique des averses.</li>
+    <li><strong>Le système de fixation :</strong> Privilégie les modèles avec 4 sangles auto-agrippantes (2 sur le guidon, 2 sur le mât) pour zéro balancement.</li>
+    <li><strong>Le volume :</strong> 2L suffit pour le téléphone et l'antivol. Prends 3L ou 4L si tu transportes le gros chargeur d'origine.</li>
+  </ul>
+
+  <h2 id="section-4"><i class="ti ti-box"></i> 4. Top Case &amp; Sacoche sous selle : Pour qui ?</h2>
+
+  <p>Si tu possèdes une trottinette imposante avec selle (type Dualtron / Kaabo) ou que tu souhaites verrouiller tes affaires à clé, le <strong>Top Case rigide arrière</strong> est une alternative intéressante. En revanche, pour les citadins en Xiaomi, Ninebot ou Wispeed, la sacoche de potence avant reste la plus légère et esthétique.</p>
+
+  <h2 id="section-5"><i class="ti ti-checkup-list"></i> Verdict : Quel rangement choisir ?</h2>
+
+  <p>La **sacoche rigide de guidon 3L** est le meilleur investissement pour libérer ton dos sans dénaturer le look de ta trottinette.</p>
+
+  <a class="affil-btn" href="https://www.amazon.fr/s?k=sacoche+trottinette+%C3%A9lectrique&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored" style="margin: 2rem auto; display: flex;">
+    <i class="ti ti-brand-amazon"></i> Voir toutes les sacoches trottinette sur Amazon
   </a>
+
 </article>
 
 <section class="cta-section">
   <div class="container">
-    <h2 id="section-7">Tu as aimé ce guide ?</h2>
-    <p>Consultez nos autres comparatifs pour trouver l'accessoire qu'il vous faut.</p>
-    <a href="/articles/" class="btn btn-primary">Voir tous les guides →</a>
+    <h2>Équipe ta trottinette pour la ville</h2>
+    <p>Consulte nos autres guides comparatifs et roule en toute sérénité.</p>
+    <a href="/articles/" class="btn btn-primary"><i class="ti ti-arrow-right"></i> Voir tous les guides équipement</a>
   </div>
 </section>
 
@@ -146,8 +433,8 @@
   <div class="container">
     <div>
       <h4>🛴 Trottinette Accessoires</h4>
-      <p>Ton guide complet pour choisir les meilleurs accessoires de trottinette électrique.</p>
-      <p class="affil-note">Ce site participe au Programme Amazon FR. En cliquant sur nos liens et en effectuant un achat, nous percevons une commission.</p>
+      <p>Ton guide urbain indépendant pour choisir les meilleurs équipements de trottinette électrique.</p>
+      <p class="affil-note">Ce site participe au Programme Amazon FR. En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises.</p>
     </div>
     <div>
       <h4>Catégories</h4>
@@ -158,18 +445,17 @@
       </ul>
     </div>
     <div>
-      <h4>Liens utiles</h4>
+      <h4>Navigation</h4>
       <ul>
         <li><a href="/a-propos.html">À propos</a></li>
         <li><a href="/mentions-legales.html">Mentions légales</a></li>
       </ul>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Trottinette Accessoires</p>
+      <p>&copy; 2026 Trottinette Accessoires — Tous droits réservés.</p>
     </div>
   </div>
 </footer>
-
 
 <script>
 window.addEventListener('scroll', function() {
@@ -180,5 +466,6 @@ window.addEventListener('scroll', function() {
   if (fill) fill.style.width = progress + '%';
 });
 </script>
+
 </body>
 </html>

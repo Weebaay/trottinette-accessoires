@@ -13,15 +13,285 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  
+  <!-- Custom Scoped Styling for Article Content (Nike Urban Light Vibe) -->
+  <style>
+    body {
+      background-color: var(--bg, #F7F7F9);
+      color: #1F2937;
+    }
+
+    .article-body {
+      max-width: 780px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .article-body h2 {
+      color: #111827;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E5E7EB;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .article-body h2 i {
+      color: #0AB8A0;
+    }
+
+    .article-body h3 {
+      color: #111827;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 1.8rem 0 0.8rem;
+    }
+
+    .article-body p {
+      color: #374151;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+
+    .article-body strong {
+      color: #111827;
+    }
+
+    /* Figures & Images */
+    .article-image-box {
+      margin: 2.2rem 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .article-image-box:hover {
+      box-shadow: 0 10px 32px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .article-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    figcaption {
+      padding: 0.85rem 1.2rem;
+      font-size: 0.86rem;
+      color: #4B5563;
+      background: #F9FAFB;
+      border-top: 1px solid #F3F4F6;
+      line-height: 1.5;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Sommaire (TOC) fond clair */
+    .toc {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-left: 4px solid #0AB8A0;
+      border-radius: 12px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    
+    .toc-title {
+      color: #0AB8A0;
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .toc li {
+      border-bottom: 1px dashed #F3F4F6;
+      padding: 0.5rem 0;
+    }
+
+    .toc a {
+      color: #374151;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: #0AB8A0;
+      transform: translateX(4px);
+    }
+
+    /* Badges de Spécifications */
+    .spec-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    .spec-badge {
+      background: rgba(18, 232, 198, 0.12);
+      border: 1px solid rgba(10, 184, 160, 0.3);
+      color: #0AB8A0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Product Review Cards (Fond Clair) */
+    .product-review-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    .product-review-card:hover {
+      border-color: #0AB8A0;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .product-review-card.featured {
+      border: 2px solid #0AB8A0;
+      background: linear-gradient(180deg, #FFFFFF 0%, rgba(18, 232, 198, 0.04) 100%);
+    }
+
+    .product-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #111827;
+      margin: 0;
+    }
+
+    .product-price-tag {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #0AB8A0;
+      white-space: nowrap;
+    }
+
+    .pros-cons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.2rem 0 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .pros-cons-grid { grid-template-columns: 1fr; }
+    }
+
+    .pros-box, .cons-box {
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      border: 1px solid #E5E7EB;
+    }
+
+    .pros-box {
+      background: rgba(18, 232, 198, 0.06);
+      border-left: 4px solid #0AB8A0;
+    }
+
+    .cons-box {
+      background: rgba(255, 71, 87, 0.06);
+      border-left: 4px solid #FF4757;
+    }
+
+    .pros-box h5, .cons-box h5 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    .pros-box h5 { color: #0AB8A0; }
+    .cons-box h5 { color: #DC2626; }
+
+    .pros-box ul, .cons-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pros-box li, .cons-box li {
+      font-size: 0.88rem;
+      color: #374151;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .pros-box li i { color: #0AB8A0; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+    .cons-box li i { color: #DC2626; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+
+    .affil-btn {
+      background: linear-gradient(135deg, #12E8C6 0%, #0AB8A0 100%);
+      color: #FFFFFF !important;
+      font-weight: 800;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(10, 184, 160, 0.25);
+    }
+
+    .affil-btn:hover {
+      box-shadow: 0 6px 24px rgba(10, 184, 160, 0.4);
+      color: #FFFFFF !important;
+    }
+
+    .highlight-box {
+      background: #FFFFFF;
+      border-left: 4px solid #0AB8A0;
+      color: #374151;
+      border-radius: 0 10px 10px 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      border-top: 1px solid #F3F4F6;
+      border-right: 1px solid #F3F4F6;
+      border-bottom: 1px solid #F3F4F6;
+    }
+
+    .highlight-box strong {
+      color: #0AB8A0;
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Support téléphone trottinette électrique : guide complet pour bien choisir",
-    "description": "Comment choisir un support téléphone pour trottinette électrique ? Critères, fixation anti-vibration, modèles étanches. Guide pratique.",
+    "headline": "Support téléphone trottinette électrique : comment bien le choisir ?",
+    "description": "Quel support téléphone pour trottinette électrique choisir ? Guide d'achat : fixation guidon, anti-vibration, étanche.",
     "datePublished": "2026-07-28",
     "author": {"@type": "Organization", "name": "Trottinette Accessoires"}
   }
@@ -31,14 +301,22 @@
 
 <nav>
   <div class="container">
-    <a href="/" class="logo"><svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/><line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/><line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/></svg> Trottinette Accessoires</a>
+    <a href="/" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/>
+        <line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/>
+        <line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/>
+      </svg>
+      Trottinette Accessoires
+    </a>
     <ul class="nav-links">
       <li><a href="/">Accueil</a></li>
-      <li><a href="/articles/">Guides</a></li>
+      <li><a href="/articles/" class="active">Guides</a></li>
       <li><a href="/a-propos.html">À propos</a></li>
     </ul>
   </div>
 </nav>
+
 <div class="progress-bar"><div class="progress-bar-fill" id="progressFill"></div></div>
 
 <section class="article-hero">
@@ -49,72 +327,99 @@
 </section>
 
 <article class="article-body">
-  <p><strong>Regarder son téléphone en conduisant, c'est 135€ d'amende — et un risque bien plus grave.</strong> Pourtant, on a tous besoin du GPS pour se déplacer en ville sans se perdre. La solution : un bon support téléphone fixé au guidon. Mais entre les fixations à 5€ qui tiennent à peine et les modèles haut de gamme à 50€, comment choisir ? On te guide.</p>
-<div class="toc">
-  <div class="toc-title">📋 Sommaire</div>
-  <ol>
-<li><a href="#section-1">Les critères essentiels</a></li>
-<li><a href="#section-2">Les différents types de supports</a></li>
-<li><a href="#section-3">Support avec ou sans coque ?</a></li>
-<li><a href="#section-4">Positionnement du support</a></li>
-<li><a href="#section-5">Conclusion</a></li>
-<li><a href="#section-6">Tu as aimé ce guide ?</a></li>
-  </ol>
-</div>
-  <p>Avec un bon support, tu peux suivre ta itinéraire GPS, voir tes notifications ou changer de musique en un coup d'oeil, sans lacher le guidon. Mais encore faut-il choisir le bon modèle. Entre les fixations basiques a 5 euros et les supports haut de gamme a 50 euros, la qualité varie énormément.</p>
 
-  <h2 id="section-1">Les critères essentiels</h2>
+  <p><strong>Tenir son smartphone d'une main en trottinette est le meilleur moyen de chuter à la première dégradation de chaussée.</strong> Consulter son itinéraire GPS en toute sécurité nécessite un support robuste fixé sur la potence, capable d'absorber les secousses tout en restant 100% lisible.</p>
 
-  <h3>La fixation : la base de tout</h3>
-  <p>Le systeme de fixation est le premier critère. Un support doit tenir fermement sur le guidon, sans bouger même sur les routes cabossées. Les meilleurs modèles utilisent un système de serrage par levier ou par vis avec un patin en caoutchouc antidérapant. Evitez les fixations a ressorts qui ont tendance a se desserrer avec les vibrations. Le diamètre du guidon de trottinette est standard (22-25mm) mais vérifiez quand même la compatibilité avant d'acheter.</p>
+  <!-- IMAGE INTEGRATED -->
+  <figure class="article-image-box">
+    <img src="/images/articles/support-telephone-cockpit.jpg" alt="Smartphone fixé sur le guidon d'une trottinette électrique affichant la navigation GPS" class="article-img">
+    <figcaption>Un support étanche à fixation rigide permet de suivre sa navigation GPS Waze ou Google Maps en un coup d'œil sans lâcher le guidon.</figcaption>
+  </figure>
 
-  <h3>L'anti-vibration : protégez ta téléphone</h3>
-  <p>C'est le critère le plus sous-estimé. Les trottinettes électriques transmettent beaucoup de vibrations au guidon. Si ta support n'absorbe pas ces vibrations, deux problèmes : ta téléphone bouge et devient illisible, et a long terme les vibrations abîment le stabilisateur optique de l'appareil photo de ta smartphone. Les supports avec système anti-vibration (ressorts ou gel) sont un peu plus chers mais valent largement l'investissement. Certains modèles haut de gamme incluent un amortisseur intégré.</p>
-
-  <h3>L'étanchéité : et si la pluie s'invite ?</h3>
-  <p>Rouler sous la pluie avec son téléphone exposé n'est jamais une bonne idée. Tu as deux options : un support avec coque étanche intégrée (type sachet transparent zippé), ou un support classique combiné a une housse de téléphone étanche. La première solution est plus pratique car tout est intègre, mais la qualite du plastique transparent determine si vous pourrez utiliser l'écran tactile ou pas. Testez avant de rouler.</p>
-
-  <h2 id="section-2">Les différents types de supports</h2>
-
-  <h3>Le support à pinces universel</h3>
-  <p>C'est le modele le plus repandu. La pince se fixe au guidon et les bras tenant le téléphone sont réglables en largeur. Pratique car compatible avec la plupart des téléphones, même avec une coque. Inconvénient : les modèles d'entrée de gamme tiennent mal sur les grosses trottinettes qui vibrent beaucoup. Budget : 8 a 20 euros.</p>
-
-  <h3>Le support magnétique</h3>
-  <p>Le téléphone se fixe par aimantation sur une plaque métallique collée au dos du téléphone ou insérée dans la coque. Super pratique : on pose et on enleve le téléphone en une seconde. Attention : l'aimant doit etre assez puissant pour tenir le téléphone sur les routes cabossées. Pas ideal pour les gros téléphones lourds. Budget : 15 a 30 euros.</p>
-
-  <h3>Le support à ventouse</h3>
-  <p>Se fixe par ventouse sur une surface plane du guidon ou du cadre. Utile si le guidon est trop fin ou trop large pour une pince. Le problème : la ventouse peut se décoller sous l'effet des vibrations ou de la chaleur. Réservé aux utilisateurs qui roulent sur des surfaces lisses. Budget : 10 a 25 euros.</p>
-
-  <div class="product-card best-choice"    <div class="product-card-visual">
-<div class="best-choice-badge">🏆 Meilleur choix</div><i class="ti ti-device-mobile" aria-hidden="true"></i></div>
-    <div class="product-card-info">
-      <h4>Notre recommandation : Support guidon anti-vibration universel</h4>
-      <p>Fixation robuste par levier, système anti-vibration intégré, compatible tous téléphones 4-7 pouces. Installation outil. Idéal pour trottinette électrique.</p>
-      <span class="product-card-price">~19€</span>
-    </div>
-    <a class="product-card-cta" href="https://www.amazon.fr/s?k=support+t%C3%A9l%C3%A9phone+trottinette+%C3%A9lectrique+guidon&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">🇫🇷 Voir le prix</a>
+  <div class="toc">
+    <div class="toc-title">📋 En un coup d'œil</div>
+    <ol>
+      <li><a href="#section-1">1. Anti-Vibration : Le piège de l'appareil photo</a></li>
+      <li><a href="#section-2">2. Notre sélection : Support Housse Étanche &amp; Alu</a></li>
+      <li><a href="#section-3">3. Pince Aluminium vs Housse Étanche Tactile</a></li>
+      <li><a href="#section-4">4. Conseils de positionnement sur le guidon</a></li>
+    </ol>
   </div>
 
-  <h2 id="section-3">Support avec ou sans coque ?</h2>
-  <p>Les supports avec coque intégrée protègent le téléphone de la pluie mais posent parfois problème pour utiliser l'écran tactile (le plastique épais ne reagit pas toujours bien). Si vous roulez principalement par beau temps, un support a pinces classique avec une coque de protection individuelle est plus agreable au quotidien. Si vous etes en region pluvieuse, la coque étanche intégrée est quasi indispensable. Vérifiez que la coque permet de charger le téléphone si besoin.</p>
+  <h2 id="section-1"><i class="ti ti-device-mobile"></i> 1. Anti-Vibration : Le piège de l'appareil photo</h2>
 
-  <h2 id="section-4">Positionnement du support</h2>
-  <p>La position du support sur le guidon est importante. Placez-le au centre du guidon si possible, pour garder un accès équilibré aux deux poignées. Ne le mettez pas trop pres de la potence pour ne pas gene r la lecture. Orientez le téléphone a 45 degrés pour limiter les reflets du soleil. Attention à ne pas bloquer les commandes de l'écran de la trottinette (certains modeles ont l'écran au centre du guidon).</p>
+  <p>Les trottinettes électriques à roues rigides transmettent des micro-vibrations de haute fréquence jusqu'au guidon. À la longue, ces vibrations détruisent la stabilisation optique (OIS) des smartphones haut de gamme (iPhone, Samsung Galaxy).</p>
 
-  <h2 id="section-5">Conclusion</h2>
-  <p>Investir dans un bon support téléphone change vraiment l'expérience de conduite. Pour la plupart des utilisateurs, un support a pinces avec systeme anti-vibration entre 15 et 25 euros est le meilleur choix. Si vous roulez souvent sous la pluie, prenez un modèle avec coque étanche intégrée. Dans tous les cas, evitez les supports à moins de 10 euros dont la qualité de fabrication est rarement à la hauteur. Et n'oubliez pas : regarder son téléphone en roulant reste dangereux, meme avec un support. Faites des arrets si tu dois consulter l'écran attentivement.</p>
+  <div class="highlight-box">
+    <strong>• Choisis un support avec patins en silicone souple ou silent-blocks en caoutchouc.</strong><br>
+    <strong>• Évite les pinces en plastique dur premier prix sans amortisseur interne.</strong>
+  </div>
 
-  <a class="affil-btn" href="https://www.amazon.fr/s?k=support+t%C3%A9l%C3%A9phone+trottinette+%C3%A9lectrique&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">
-    🛒 Voir les supports téléphone sur Amazon
-    <small>Liens commerciaux</small>
+  <h2 id="section-2"><i class="ti ti-trophy"></i> 2. Notre sélection : Support Housse Étanche Tactile</h2>
+
+  <!-- PRODUIT 1 : SUPPORT HOUSSE ETANCHE -->
+  <div class="product-review-card featured">
+    <div class="product-header-row">
+      <div>
+        <div class="spec-badge">🏆 Le Plus Complet pour la Ville</div>
+        <h3 class="product-title">Support Smartphone Housse Étanche Universel</h3>
+      </div>
+      <span class="product-price-tag">~19 €</span>
+    </div>
+
+    <div class="spec-badges">
+      <span class="spec-badge">Écran Tactile TPU</span>
+      <span class="spec-badge">Étanchéité IP65</span>
+      <span class="spec-badge">Rotation 360°</span>
+    </div>
+
+    <p>Ce support combine une housse rigide zippée imperméable et un collier de fixation en aluminium. Tu glisses ton téléphone à l'intérieur, et la membrane transparente TPU conserve la sensibilité de l'écran tactile même sous la pluie.</p>
+
+    <div class="pros-cons-grid">
+      <div class="pros-box">
+        <h5><i class="ti ti-thumb-up"></i> Ce qu'on adore</h5>
+        <ul>
+          <li><i class="ti ti-check"></i> Protection totale contre les éclaboussures et la pluie</li>
+          <li><i class="ti ti-check"></i> Fixation solide qui ne tourne pas sur la potence</li>
+          <li><i class="ti ti-check"></i> Espace interne pour caser une batterie externe ultra fine</li>
+        </ul>
+      </div>
+      <div class="cons-box">
+        <h5><i class="ti ti-thumb-down"></i> Ce qu'on aime moins</h5>
+        <ul>
+          <li><i class="ti ti-x"></i> Reflets en plein soleil direct</li>
+          <li><i class="ti ti-x"></i> Légèrement plus volumineux qu'une simple pince</li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="affil-btn" href="https://www.amazon.fr/s?k=support+t%C3%A9l%C3%A9phone+trottinette+%C3%A9lectrique+guidon&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">
+      <i class="ti ti-shopping-cart"></i> Voir le support étanche sur Amazon
+    </a>
+  </div>
+
+  <h2 id="section-3"><i class="ti ti-adjustments"></i> 3. Pince Aluminium vs Housse Étanche</h2>
+
+  <ul>
+    <li><strong>La Pince Aluminium à vis :</strong> Idéale par beau temps. Très compacte, le téléphone est directement accessible. Nécessite une coque antichoc sur ton smartphone.</li>
+    <li><strong>La Housse Étanche Zippée :</strong> Indispensable pour rouler par tous les temps et protéger le téléphone de la poussière et des projections de boue.</li>
+  </ul>
+
+  <h2 id="section-4"><i class="ti ti-checkup-list"></i> Verdict : Quel support installer ?</h2>
+
+  <p>Pour un usage quotidien en ville avec GPS, <strong>le support à housse étanche TPU</strong> offre le meilleur équilibre entre sécurité, protection contre la pluie et confort de lecture.</p>
+
+  <a class="affil-btn" href="https://www.amazon.fr/s?k=support+t%C3%A9l%C3%A9phone+trottinette+%C3%A9lectrique&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored" style="margin: 2rem auto; display: flex;">
+    <i class="ti ti-brand-amazon"></i> Découvrir tous les supports smartphone sur Amazon
   </a>
+
 </article>
 
 <section class="cta-section">
   <div class="container">
-    <h2 id="section-6">Tu as aimé ce guide ?</h2>
-    <p>Consultez nos autres comparatifs pour trouver l'accessoire qu'il vous faut.</p>
-    <a href="/articles/" class="btn btn-primary">Voir tous les guides →</a>
+    <h2>Équipe ta trottinette pour la ville</h2>
+    <p>Consulte nos autres guides comparatifs et roule en toute sérénité.</p>
+    <a href="/articles/" class="btn btn-primary"><i class="ti ti-arrow-right"></i> Voir tous les guides équipement</a>
   </div>
 </section>
 
@@ -122,8 +427,8 @@
   <div class="container">
     <div>
       <h4>🛴 Trottinette Accessoires</h4>
-      <p>Ton guide complet pour choisir les meilleurs accessoires de trottinette électrique.</p>
-      <p class="affil-note">Ce site participe au Programme Amazon FR. En cliquant sur nos liens et en effectuant un achat, nous percevons une commission.</p>
+      <p>Ton guide urbain indépendant pour choisir les meilleurs équipements de trottinette électrique.</p>
+      <p class="affil-note">Ce site participe au Programme Amazon FR. En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises.</p>
     </div>
     <div>
       <h4>Catégories</h4>
@@ -134,18 +439,17 @@
       </ul>
     </div>
     <div>
-      <h4>Liens utiles</h4>
+      <h4>Navigation</h4>
       <ul>
         <li><a href="/a-propos.html">À propos</a></li>
         <li><a href="/mentions-legales.html">Mentions légales</a></li>
       </ul>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Trottinette Accessoires</p>
+      <p>&copy; 2026 Trottinette Accessoires — Tous droits réservés.</p>
     </div>
   </div>
 </footer>
-
 
 <script>
 window.addEventListener('scroll', function() {
@@ -156,5 +460,6 @@ window.addEventListener('scroll', function() {
   if (fill) fill.style.width = progress + '%';
 });
 </script>
+
 </body>
 </html>

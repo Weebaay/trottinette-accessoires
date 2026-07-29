@@ -1,1 +1,22 @@
-seo/sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://trottinette-accessoires.fr/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/top-10-accessoires-indispensables.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/meilleur-casque-trottinette-electrique.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/meilleur-antivol-trottinette-electrique.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/sacoche-trottinette-electrique.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/kit-eclairage-trottinette-electrique.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/support-telephone-trottinette.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/gants-trottinette-electrique-hiver.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/guide-entretien-trottinette-electrique.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/accessoires-trottinette-hiver.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/accessoires-trottinette-pas-chers.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/trottinette-sous-la-pluie.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/accessoires-trottinette-trajet-travail.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/confort-trottinette-electrique.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/budget-accessoires-trottinette-debutant.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/articles/securiser-trottinette-electrique.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/a-propos.html</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://trottinette-accessoires.fr/mentions-legales.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+</urlset>

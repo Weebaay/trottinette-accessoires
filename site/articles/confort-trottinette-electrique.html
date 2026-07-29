@@ -16,6 +16,110 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  
+  <!-- Custom Scoped Styling for Article Content (Nike Urban Light Vibe) -->
+  <style>
+    body {
+      background-color: var(--bg, #F7F7F9);
+      color: #1F2937;
+    }
+    .article-body {
+      max-width: 780px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+    .article-body h2 {
+      color: #111827;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin: 2.8rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E5E7EB;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .article-body h2 i { color: #0AB8A0; }
+    .article-body h3 { color: #111827; font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 0.8rem; }
+    .article-body p { color: #374151; font-size: 1.02rem; line-height: 1.75; margin-bottom: 1.2rem; }
+    .article-body strong { color: #111827; }
+    .article-image-box {
+      margin: 2.2rem 0; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+      background: #FFFFFF; border: 1px solid #E5E7EB;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .article-image-box:hover {
+      box-shadow: 0 10px 32px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .article-img { width: 100%; height: auto; display: block; object-fit: cover; }
+    figcaption {
+      padding: 0.85rem 1.2rem; font-size: 0.86rem; color: #4B5563;
+      background: #F9FAFB; border-top: 1px solid #F3F4F6;
+      line-height: 1.5; text-align: center; font-weight: 500;
+    }
+    .toc {
+      background: #FFFFFF; border: 1px solid #E5E7EB;
+      border-left: 4px solid #0AB8A0; border-radius: 12px;
+      padding: 1.4rem 1.8rem; margin: 2rem 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .toc-title { color: #0AB8A0; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; }
+    .toc li { border-bottom: 1px dashed #F3F4F6; padding: 0.5rem 0; }
+    .toc a { color: #374151; font-weight: 500; transition: all 0.2s ease; }
+    .toc a:hover { color: #0AB8A0; transform: translateX(4px); }
+    .spec-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.6rem 0 1.2rem; }
+    .spec-badge {
+      background: rgba(18, 232, 198, 0.12);
+      border: 1px solid rgba(10, 184, 160, 0.3);
+      color: #0AB8A0; font-size: 0.75rem; font-weight: 700;
+      padding: 0.25rem 0.65rem; border-radius: 6px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .product-review-card {
+      background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px;
+      padding: 1.8rem; margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    }
+    .product-review-card:hover {
+      border-color: #0AB8A0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .product-review-card.featured { border: 2px solid #0AB8A0; background: linear-gradient(180deg, #FFFFFF 0%, rgba(18, 232, 198, 0.04) 100%); }
+    .product-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.8rem; }
+    .product-title { font-size: 1.3rem; font-weight: 800; color: #111827; margin: 0; }
+    .product-price-tag { font-size: 1.2rem; font-weight: 900; color: #0AB8A0; white-space: nowrap; }
+    .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0 1.5rem; }
+    @media (max-width: 640px) { .pros-cons-grid { grid-template-columns: 1fr; } }
+    .pros-box, .cons-box { border-radius: 10px; padding: 1rem 1.2rem; border: 1px solid #E5E7EB; }
+    .pros-box { background: rgba(18, 232, 198, 0.06); border-left: 4px solid #0AB8A0; }
+    .cons-box { background: rgba(255, 71, 87, 0.06); border-left: 4px solid #FF4757; }
+    .pros-box h5, .cons-box h5 { font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.6rem; }
+    .pros-box h5 { color: #0AB8A0; }
+    .cons-box h5 { color: #DC2626; }
+    .pros-box ul, .cons-box ul { list-style: none; padding: 0; margin: 0; }
+    .pros-box li, .cons-box li { font-size: 0.88rem; color: #374151; margin-bottom: 0.4rem; display: flex; align-items: flex-start; gap: 0.4rem; line-height: 1.4; }
+    .pros-box li i { color: #0AB8A0; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+    .cons-box li i { color: #DC2626; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+    .affil-btn {
+      background: linear-gradient(135deg, #12E8C6 0%, #0AB8A0 100%);
+      color: #FFFFFF !important; font-weight: 800; border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(10, 184, 160, 0.25);
+    }
+    .affil-btn:hover { box-shadow: 0 6px 24px rgba(10, 184, 160, 0.4); color: #FFFFFF !important; }
+    .highlight-box {
+      background: #FFFFFF; border-left: 4px solid #0AB8A0;
+      color: #374151; border-radius: 0 10px 10px 0;
+      padding: 1.2rem 1.4rem; margin: 1.8rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      border-top: 1px solid #F3F4F6; border-right: 1px solid #F3F4F6; border-bottom: 1px solid #F3F4F6;
+    }
+    .highlight-box strong { color: #0AB8A0; }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,9 +136,9 @@
 <nav>
   <div class="container">
     <a href="/" class="logo"><svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#12E8C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="20" r="2.5"/><circle cx="17" cy="20" r="2.5"/><line x1="8" y1="17.5" x2="8" y2="8"/><line x1="8" y1="8" x2="15" y2="6"/><line x1="15" y1="6" x2="15" y2="17.5"/><line x1="8" y1="12" x2="12" y2="12"/></svg> Trottinette Accessoires</a>
-    <ul class="nav-links">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/articles/">Guides</a></li>
+        <ul class="nav-links">
+      <li><a href="/"><i class="ti ti-home"></i> Accueil</a></li>
+      <li><a href="/articles/" class="active">Guides</a></li>
       <li><a href="/a-propos.html">À propos</a></li>
     </ul>
   </div>
@@ -43,13 +147,20 @@
 
 <section class="article-hero">
   <div class="container">
-    <p class="article-hero-breadcrumb"><a href="/">Accueil</a> › <a href="/articles/">Guides</a> › Confort trottinette</p>
+    <p class="article-hero-breadcrumb"><a href="/"><i class="ti ti-home"></i> Accueil</a> › <a href="/articles/">Guides</a> › Confort trottinette</p>
     <h1>Confort trottinette électrique : selle, poignées, suspensions 🛴</h1>
   </div>
 </section>
 
 <article class="article-body">
   <p><strong>Tu roules plus de 30 minutes par jour et les mains commencent à s'engourdir ?</strong> Le confort d'une trottinette standard peut être transformé avec quelques accessoires bien choisis. Poignées ergonomiques, selle confort, suspension améliorée — pour moins de 70€, tu changes complètement l'expérience de conduite. Voici par où commencer.</p>
+  <!-- TODO: Ajouter image article -->
+
+  <figure class="article-image-box">
+    <img src="/images/articles/placeholder.webp" alt="Illustration article" class="article-img">
+    <figcaption>Illustration - Image à venir.</figcaption>
+  </figure>
+
 <div class="toc">
   <div class="toc-title">📋 Sommaire</div>
   <ol>
@@ -66,7 +177,14 @@
 </div>
   <p>Les trottinettes électriques standard sont rarement conçues pour le confort longue distance. Les poignées d'origine sont dures, la suspension est basique et le plateau n'absorbe pas les vibrations. Avec des investissements ciblés (50 a 150 euros), tu peux transformer ta trottinette en un vrai vehicule de confort pour les trajets prolongés.</p>
 
-  <h2 id="section-1">Les poignées ergonomiques : le confort des mains</h2>
+  
+
+  <div class="highlight-box">
+    <strong>🎯 Par où commencer selon votre budget</strong><br><br>
+    <strong>1. Poignées ergonomiques (15€)</strong> — le meilleur rapport confort/prix<br><strong>2. Tapis de plateau anti-vibrations (15€)</strong><br><strong>3. Selle confort (40€)</strong> — si votre trottinette l'accepte<br><strong>4. Suspensions renforcées (40-80€)</strong> — le confort ultime
+  </div>
+
+<h2 id="section-1">Les poignées ergonomiques : le confort des mains</h2>
   <p>Les poignées d'origine des trottinettes sont souvent en caoutchouc dur qui transmet toutes les vibrations. Apres 20 minutes, les mains commencent a s'engourdir. Les poignées ergonomiques en gel ou en silicone changent complètement la sensation. Elles absorbent les vibrations et offrent une meilleure prise en main, même avec des gants.</p>
   <p>Deux grandes familles : les poignées a mémoire de forme (gel) qui épousent la forme de ta main, et les poignées en silicone avec alvéoles qui évacuent la transpiration. Certains modeles ont des embouts élargis (ergo grips) qui reduisent la pression sur le poignet. Le changement des poignées est simple : elles se glissent sur le guidon, parfois avec un peu d'eau savonneuse. Budget : 10 a 25 euros.</p>
 
@@ -84,14 +202,44 @@
   <h2 id="section-5">La potence réglable</h2>
   <p>Si vous mesurez plus d'1m80 ou moins d'1m60, la hauteur du guidon d'origine n'est peut-être pas adaptée a ta taille. Une potence réglable en hauteur (sans outil) permet de trouver la position idéale pour ton dos et tes épaules. Certaines potences offrent aussi un réglage d'angle (penchant le guidon vers l'avant ou l'arriere). Cela peut sembler anecdotique mais une mauvaise position de conduite provoque des douleurs lombaires à la longue.</p>
 
-  <div class="product-card best-choice"    <div class="product-card-visual">
-<div class="best-choice-badge">🏆 Meilleur choix</div><i class="ti ti-armchair" aria-hidden="true"></i></div>
-    <div class="product-card-info">
-      <h4>Notre recommandation : Kit selle confort trottinette électrique</h4>
-      <p>Selle large rembourrée avec suspension à ressort, kit de montage universel inclus. Compatible avec la plupart des trottinettes électriques standards. Réglable en hauteur.</p>
-      <span class="product-card-price">~39€</span>
+    <div class="product-review-card featured">
+    <div class="product-header-row">
+      <div>
+        <div class="spec-badge"><i class="ti ti-armchair"></i> À découvrir</div>
+        <h3 class="product-title">Kit selle confort trottinette électrique</h3>
+      </div>
+      <span class="product-price-tag">~39€</span>
     </div>
-    <a class="product-card-cta" href="https://www.amazon.fr/s?k=selle+trottinette+%C3%A9lectrique+confort&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">🇫🇷 Voir le prix</a>
+
+    <div class="spec-badges">
+      <span class="spec-badge">Suspension Ressort</span>
+      <span class="spec-badge">Montage Universel</span>
+      <span class="spec-badge">Rembourrage Large</span>
+    </div>
+
+    <p>Selle large rembourrée avec suspension à ressort, kit de montage universel inclus. Compatible avec la plupart des trottinettes électriques standards. Réglable en hauteur.</p>
+
+    <div class="pros-cons-grid">
+      <div class="pros-box">
+        <h5><i class="ti ti-thumb-up"></i> Ce qu'on adore</h5>
+        <ul>
+          <li><i class="ti ti-check"></i> Confort longue distance amélioré</li>
+          <li><i class="ti ti-check"></i> Suspension intégrée anti-chocs</li>
+          <li><i class="ti ti-check"></i> Réglable en hauteur sans outil</li>
+        </ul>
+      </div>
+      <div class="cons-box">
+        <h5><i class="ti ti-thumb-down"></i> Ce qu'on aime moins</h5>
+        <ul>
+          <li><i class="ti ti-x"></i> Compatibilité limitée à certains modèles</li>
+          <li><i class="ti ti-x"></i> Poids supplémentaire sur la trottinette</li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="affil-btn" href="https://www.amazon.fr/s?k=selle+trottinette+%C3%A9lectrique+confort&tag=trottinetteac-21" target="_blank" rel="nofollow sponsored">
+      <i class="ti ti-shopping-cart"></i> Voir le prix du kit selle confort sur Amazon
+    </a>
   </div>
 
   <h2 id="section-6">Les autres accessoires confort</h2>
@@ -121,8 +269,8 @@
   <div class="container">
     <div>
       <h4>🛴 Trottinette Accessoires</h4>
-      <p>Ton guide complet pour choisir les meilleurs accessoires de trottinette électrique.</p>
-      <p class="affil-note">Ce site participe au Programme Amazon FR. En cliquant sur nos liens et en effectuant un achat, nous percevons une commission.</p>
+      <p>Ton guide urbain indépendant pour choisir les meilleurs équipements de trottinette électrique.</p>
+      <p class="affil-note">Ce site participe au Programme Amazon FR. En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises.</p>
     </div>
     <div>
       <h4>Catégories</h4>
@@ -133,14 +281,14 @@
       </ul>
     </div>
     <div>
-      <h4>Liens utiles</h4>
+      <h4>Navigation</h4>
       <ul>
         <li><a href="/a-propos.html">À propos</a></li>
         <li><a href="/mentions-legales.html">Mentions légales</a></li>
       </ul>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Trottinette Accessoires</p>
+      <p>&copy; 2026 Trottinette Accessoires — Tous droits réservés.</p>
     </div>
   </div>
 </footer>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://trottinette-accessoires.fr/sitemap.xml

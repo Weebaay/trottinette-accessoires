@@ -185,10 +185,14 @@ nav .container {
   justify-content: center;
   align-items: center;
 }
-.hero-visual svg {
+.hero-visual .hero-img {
   width: 100%;
-  max-width: 380px;
+  max-width: 480px;
   height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 40px rgba(232,93,4,0.15), 0 2px 8px rgba(0,0,0,0.2);
+  object-fit: cover;
+  aspect-ratio: 3/2;
 }
 
 /* ---- Buttons ---- */

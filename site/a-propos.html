@@ -76,13 +76,34 @@
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "À propos de Trottinette Accessoires",
-    "description": "Guide indépendant et transparent dédié aux accessoires pour trottinette électrique.",
-    "url": "https://trottinette-accessoires.fr/a-propos.html"
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "name": "À propos de Trottinette Accessoires",
+      "description": "Pourquoi Trottinette Accessoires existe, comment nous sélectionnons les produits recommandés et comment le site est financé par l'affiliation Amazon.",
+      "url": "https://trottinette-accessoires.fr/a-propos.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://trottinette-accessoires.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "À propos",
+          "item": "https://trottinette-accessoires.fr/a-propos.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
   <script async src="https://stats.depannage-thonon.fr/script.js" data-website-id="069213b7-ecd2-47da-bbf8-f8fdabccb14e"></script>
 </head>

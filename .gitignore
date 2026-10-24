@@ -9,3 +9,7 @@ desktop.ini
 *~
 .vscode/
 .idea/
+
+# Secrets (local only)
+tocken.md
+.git-credentials

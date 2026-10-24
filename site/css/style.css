@@ -511,6 +511,7 @@ nav .container {
   border-bottom: 1px solid var(--border);
 }
 .article-body tr:last-child td { border-bottom: none; }
+.article-body .affil-disclosure { font-size: 0.85rem; line-height: 1.5; color: #4B5563; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 8px; padding: 0.6rem 0.9rem; margin: 1.5rem 0; }
 
 /* ---- Table of Contents (Sommaire) ---- */
 .toc {

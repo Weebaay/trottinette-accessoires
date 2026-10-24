@@ -511,6 +511,9 @@ nav .container {
   border-bottom: 1px solid var(--border);
 }
 .article-body tr:last-child td { border-bottom: none; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.2rem 0; }
+.table-scroll table { margin: 0; min-width: 520px; }
+.article-body table.comparatif tbody th { background: transparent; color: var(--text); border-bottom: 1px solid var(--border); }
 .article-body .affil-disclosure { font-size: 0.85rem; line-height: 1.5; color: #4B5563; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 8px; padding: 0.6rem 0.9rem; margin: 1.5rem 0; }
 
 /* ---- Table of Contents (Sommaire) ---- */

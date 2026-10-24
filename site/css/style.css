@@ -463,6 +463,8 @@ nav .container {
 .article-hero-breadcrumb a:hover { color: var(--accent); }
 .article-hero h1 { font-size: 2rem; font-weight: 800; max-width: 720px; margin: 0 auto; letter-spacing: -0.3px; line-height: 1.2; }
 .article-dates { margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-on-dark-muted); }
+.article-dates a { color: inherit; text-decoration: underline; }
+.article-dates a:hover { color: var(--accent); }
 
 .article-body {
   max-width: var(--article-max-width);

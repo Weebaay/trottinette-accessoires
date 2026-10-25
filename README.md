@@ -42,6 +42,8 @@ docs/
 
 outils/
 └── verifier-site.py          ← vérification avant chaque mise en ligne
+
+deploy.sh                     ← mise en ligne, à lancer sur le serveur (voir « Déploiement »)
 ```
 
 L'en-tête (menu) et le pied de page sont copiés à l'identique dans chaque page : une modification doit être reportée sur les 19 pages.
@@ -85,9 +87,50 @@ puis ouvrir http://localhost:8080/.
 
 ## Déploiement
 
-- Hébergement : VPS Oracle Cloud. Caddy (conteneur Docker `caddy-site`, configuration dans `/opt/caddy/Caddyfile`) sert directement le dossier `/opt/trottinette-accessoires/site/`, en HTTPS automatique.
-- Pas de déploiement automatique : le propriétaire copie lui-même le contenu de `site/` sur le serveur.
-- Penser à copier aussi les dossiers `fonts/`, `css/` et `images/` (dont `icons.svg`) : sans eux, la police, les styles et les icônes ne s'affichent pas.
+### Comment le site est hébergé
+
+- VPS Oracle Cloud. Le dépôt Git est cloné dans `/opt/trottinette-accessoires`.
+- Caddy (conteneur Docker `caddy-site`, configuration dans `/opt/caddy/Caddyfile`) sert directement le dossier `/opt/trottinette-accessoires/site/`, en HTTPS automatique. Caddy lit les fichiers sur le disque : tout fichier modifié sur le serveur est en ligne immédiatement.
+- La mise en ligne n'est pas automatique : elle se fait en lançant `deploy.sh` sur le serveur, qui récupère la branche `main` de GitHub.
+
+### Mettre une modification en ligne
+
+1. Travailler sur une branche (jamais directement sur `main`), puis lancer `python3 outils/verifier-site.py`.
+2. Si un fichier CSS, les icônes ou la police ont changé, mettre à jour le paramètre de version (voir « Cache » ci-dessus).
+3. Fusionner la branche dans `main` en avance rapide, puis envoyer sur GitHub :
+
+   ```bash
+   git checkout main
+   git merge --ff-only NOM-DE-LA-BRANCHE
+   git push origin main
+   ```
+
+   Si GitHub refuse le `push` parce que `main` y a avancé entre-temps, intégrer d'abord ces changements sans réécrire l'historique : `git pull --no-rebase --no-edit origin main`, puis refaire le `push`.
+4. Sur le serveur :
+
+   ```bash
+   cd /opt/trottinette-accessoires
+   git status        # doit n'afficher aucun fichier modifié
+   ./deploy.sh
+   ```
+
+### Ce que fait `deploy.sh`
+
+1. **Contrôle de l'état du serveur** : il signale les fichiers modifiés sur le serveur et non enregistrés dans Git (ils sont déjà en ligne).
+2. **Récupération** : `git fetch` de `main` depuis GitHub. Si le serveur est déjà à jour, il ne fait rien. Sinon, il applique la mise à jour **en avance rapide uniquement** (`git merge --ff-only`) et liste les fichiers modifiés. Il n'écrase jamais rien.
+3. **Avertissement de cache** : si des fichiers `.css`, `.js`, `.svg`, `.ico` ou des images ont changé, il rappelle qu'ils sont mis en cache un an et qu'il faut changer leur paramètre `?v=`. Les polices `.woff2` ne déclenchent pas cet avertissement : y penser soi-même.
+4. **Vérification** : il contrôle que https://trottinette-accessoires.fr/ répond avec le code 200.
+
+Codes de sortie :
+
+| Code | Signification | Que faire |
+|---|---|---|
+| 0 | Mise en ligne réussie, ou déjà à jour | Rien |
+| 2 | L'avance rapide a échoué : soit le serveur a des commits absents de GitHub, soit des fichiers modifiés directement sur le serveur entrent en conflit avec la mise à jour. Rien n'a été modifié. | Lancer `git status` et `git log origin/main..HEAD` sur le serveur, et régler la situation avant de relancer |
+| 3 | Le site ne répond pas avec le code 200 | Vérifier Caddy et le site immédiatement |
+| Autre | Une commande a échoué et le script s'est arrêté (par exemple GitHub injoignable lors du `git fetch`) | Lire le message affiché, corriger, relancer |
+
+**À éviter** : modifier des fichiers directement sur le serveur. Ces modifications bloquent les déploiements suivants (code 2) et risquent d'être perdues. Toute modification doit passer par Git et GitHub.
 
 ## Licences des ressources tierces
 

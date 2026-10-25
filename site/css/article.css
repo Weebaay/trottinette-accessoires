@@ -179,6 +179,9 @@ figcaption {
 .highlight-box.methode-selection { background: #F9FAFB; border-left-color: #6B7280; }
 .highlight-box.methode-selection strong { color: #111827; }
 
+/* Ligne des sources réglementaires */
+.article-body .sources-regles { font-size: 0.88rem; color: #4B5563; }
+
 /* ---- Bloc « Guides liés » ---- */
 .article-body ul.guides-lies { list-style: none; padding: 0; display: grid; gap: 0.6rem; }
 .article-body ul.guides-lies li { margin: 0; }

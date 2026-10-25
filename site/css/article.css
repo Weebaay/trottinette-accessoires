@@ -5,24 +5,13 @@
    ============================================================== */
 
 :root {
-  /* Vert d'eau foncé pour le texte : contraste 5,5:1 sur fond blanc
-     (l'accent #12E8C6 n'atteint que 1,6:1 et reste réservé aux fonds et décors). */
-  --accent-text: #0F766E;
-  --accent-text-hover: #115E59;
-  /* Texte posé sur un fond vert d'eau (boutons) : contraste supérieur à 5:1. */
-  --on-accent: #06302B;
-  --danger-text: #B91C1C;
-  --focus-ring: #0F766E;
+  --danger-text: #B91C1C; /* 6:1 sur le fond rosé des points faibles */
 }
 
 body {
   background-color: var(--bg, #F7F7F9);
   color: #1F2937;
 }
-
-/* ---- Focus clavier visible sur fond clair ---- */
-:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
-nav :focus-visible, footer :focus-visible, .article-hero :focus-visible, .cta-section :focus-visible { outline-color: var(--accent); }
 
 /* ---- Corps de l'article ---- */
 .article-body {
@@ -152,9 +141,6 @@ figcaption {
 .affil-btn:hover { box-shadow: 0 6px 24px rgba(10, 184, 160, 0.4); color: var(--on-accent) !important; }
 .affil-btn small { opacity: 0.85; }
 
-/* Bouton principal (appel final « Voir tous les guides ») */
-.btn-primary, .btn-primary:hover { color: var(--on-accent); }
-
 /* Lien de section (Top 10) */
 .section-link-btn {
   display: inline-flex;
@@ -218,9 +204,4 @@ figcaption {
   .toc { padding: 1.1rem 1.2rem; }
   .highlight-box { padding: 1rem 1.1rem; }
   .affil-btn { max-width: none; }
-}
-
-/* ---- Préférence « réduire les animations » ---- */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }

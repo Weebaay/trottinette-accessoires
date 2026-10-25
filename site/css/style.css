@@ -50,6 +50,9 @@ body {
 
 img { max-width: 100%; height: auto; display: block; }
 
+/* Icônes SVG (fichier /images/icons.svg) : taille et couleur suivent le texte */
+.icon { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
 a { color: var(--accent); text-decoration: none; transition: all 0.2s; }
 a:hover { color: var(--accent-dark); }
 
@@ -344,7 +347,7 @@ nav .container {
   justify-content: center;
   flex-shrink: 0;
 }
-.cat-icon i {
+.cat-icon .icon {
   font-size: 22px;
   color: var(--accent);
 }
@@ -386,7 +389,7 @@ nav .container {
   color: var(--accent);
   opacity: 0.9;
 }
-.article-card-visual i { font-size: 42px; }
+.article-card-visual .icon { font-size: 42px; }
 .article-card-visual img {
   width: 100%;
   height: 100%;
@@ -403,7 +406,7 @@ nav .container {
   align-items: center;
   justify-content: center;
 }
-.article-card-img i {
+.article-card-img .icon {
   font-size: 48px;
   color: var(--accent);
   opacity: 0.8;

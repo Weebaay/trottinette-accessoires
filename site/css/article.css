@@ -31,7 +31,7 @@ body {
   align-items: center;
   gap: 0.6rem;
 }
-.article-body h2 i { color: var(--accent-text); }
+.article-body h2 .icon { color: var(--accent-text); }
 .article-body h3 { color: #111827; font-size: 1.2rem; font-weight: 700; margin: 1.8rem 0 0.8rem; }
 .article-body p { color: #374151; font-size: 1.02rem; line-height: 1.75; margin-bottom: 1.2rem; }
 .article-body li { color: #374151; font-size: 1rem; line-height: 1.6; }
@@ -125,8 +125,8 @@ figcaption {
 .cons-box h5 { color: var(--danger-text); }
 .pros-box ul, .cons-box ul { list-style: none; padding: 0; margin: 0; }
 .pros-box li, .cons-box li { font-size: 0.9rem; color: #374151; margin-bottom: 0.4rem; display: flex; align-items: flex-start; gap: 0.4rem; line-height: 1.45; }
-.pros-box li i { color: var(--accent-text); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
-.cons-box li i { color: var(--danger-text); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+.pros-box li .icon { color: var(--accent-text); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+.cons-box li .icon { color: var(--danger-text); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
 
 /* ---- Bouton Amazon : texte foncé sur vert d'eau (contraste 5:1 minimum) ---- */
 .affil-btn {
